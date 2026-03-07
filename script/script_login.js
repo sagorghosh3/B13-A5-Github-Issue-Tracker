@@ -12,11 +12,17 @@ document.getElementById("Signin-btn").addEventListener("click", function () {
     const password = inputPass.value;
     console.log(password);
     // 3-match pass & admin 
-    if (User == "admin" && password == "1234") {
+    if (User == "admin" && password === "1234") {
         alert("log in successfully");
         window.location.assign("/home.html");
     } else {
         alert("login Failed");
         return;
     }
-})
+});
+
+const allBtn = document.getElementById("all-btn");
+const openBtn = document.getElementById("open-btn");
+const closeBtn = document.getElementById("close-btn");
+
+loadIssue();
