@@ -14,7 +14,7 @@ document.getElementById("Signin-btn").addEventListener("click", function () {
     // 3-match pass & admin 
     if (User == "admin" && password === "1234") {
         alert("log in successfully");
-        window.location.assign("/home.html");
+        window.location.assign("home.html");
     } else {
         alert("login Failed");
         return;

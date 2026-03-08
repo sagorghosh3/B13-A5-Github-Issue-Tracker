@@ -1,10 +1,9 @@
 // console.log(" i'm");
 const IssueContainer = document.getElementById("issue-container");
 const loadSpinner = document.getElementById("load-spinner");
-const allBtn = document.getElementById("all-btn");
-const openBtn = document.getElementById("open-btn");
-const closeBtn = document.getElementById("close-btn");
+
 let allIssues = [];
+let currentTab = "all";
 
 function showLoading() {
     loadSpinner.classList.remove("hidden");
@@ -15,45 +14,19 @@ function hideLoading() {
     loadSpinner.classList.add("hidden");
 }
 
-function setActiveBtn(activeBtn) {
+function switchTab(tab) {
 
-    allBtn.classList.remove("btn-primary");
-    openBtn.classList.remove("btn-primary");
-    closeBtn.classList.remove("btn-primary");
+    const tabs = ["all", "open", "close"];
+    for (const t of tabs) {
+        const btnName = document.getElementById("btn-" + t);
+        if (t === tab) {
+            btnName.classList.add("btn-primary");
+        } else {
+            btnName.classList.remove("btn-primary");
+        }
+    }
 
-    activeBtn.classList.add("btn-primary");
 }
-
-
-allBtn.addEventListener("click", () => {
-
-    setActiveBtn(allBtn);
-
-    displayIssue(allIssues);
-
-});
-
-openBtn.addEventListener("click", () => {
-
-    setActiveBtn(openBtn);
-
-    const openIssues = allIssues.filter(issue => issue.status === "open");
-
-    displayIssue(openIssues);
-
-});
-
-closeBtn.addEventListener("click", () => {
-
-    setActiveBtn(closeBtn);
-
-    const closeIssues = allIssues.filter(issue => issue.status === "closed");
-
-    displayIssue(closeIssues);
-
-});
-
-
 
 
 const loadIssue = () => {
@@ -62,10 +35,6 @@ const loadIssue = () => {
         .then(res => res.json())
         .then((json) => displayIssue(json.data));
     hideLoading()
-
-    // loadSpinner.classList.add("hidden"); //need to work
-    // console.log(IssueContainer);
-    // IssueContainer.innerHTML = "Dekhao tmi kothay bosba"
 };
 
 const displayIssue = (issues) => {
@@ -101,3 +70,4 @@ const displayIssue = (issues) => {
 
 
 loadIssue();
+
