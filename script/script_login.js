@@ -21,8 +21,4 @@ document.getElementById("Signin-btn").addEventListener("click", function () {
     }
 });
 
-const allBtn = document.getElementById("all-btn");
-const openBtn = document.getElementById("open-btn");
-const closeBtn = document.getElementById("close-btn");
-
 loadIssue();

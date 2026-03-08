@@ -57,12 +57,13 @@
     <main class="w-[80%] mx-auto bg-base-100 shadow-sm">
 
         <div class="mt-6 mb-3 bg-base-100 shadow-sm h-[70px] pt-3.5 pl-2">
-            <button onclick="toggleStyle('all-btn')"
-                class="bg-blue-800 rounded-md px-8 py-2 text-white shadow-3xl border" id="all-btn">All</button>
-            <button onclick="toggleStyle('open-btn')" class="bg-white rounded-md px-8 py-2 shadow-2xl ml-2 mr-2 border"
+            <button id="all-btn" class="btn btn-primary">All</button>
+            <button id="open-btn" class="btn btn-primary">Open</button>
+            <button id="close-btn" class="btn btn-primary">Close</button>
+            <!-- <button onclick="toggleStyle('open-btn')" class="bg-white rounded-md px-8 py-2 shadow-2xl ml-2 mr-2 border"
                 id="open-btn">Open</button>
             <button onclick="toggleStyle('close-btn')" class="bg-white rounded-md px-8 py-2 shadow-2xl border"
-                id="close-btn">Close</button>
+                id="close-btn">Close</button> -->
         </div>
 
         <div>
@@ -70,7 +71,7 @@
                 <div class="flex gap-2">
                     <img src="./assets/Aperture.png" alt="">
                     <div>
-                        <p class="font-bold">50 Issues</p>
+                        <p id="count" class="font-bold">50 Issues</p>
                         <p class="opacity-50 w-3xl">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -95,10 +96,15 @@
         </div>
 
 
+        <!-- show loading spinner -->
+        <div id="load-spinner" class="h-[90vh] hidden justify-center items-center">
+            <span class="loading loading-spinner loading-xl"></span>
+        </div>
 
 
 
     </main>
+    <!-- <script src="./script/script_all.js"></script> -->
     <script src="./script/Load_script.js"></script>
 </body>
 
