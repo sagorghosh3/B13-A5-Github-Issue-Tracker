@@ -58,8 +58,8 @@
 
         <div class="mt-6 mb-3 bg-base-100 shadow-sm h-[70px] pt-3.5 pl-2">
             <button onclick="switchTab('all')" id="btn-all" class="btn btn-primary">All</button>
-            <button onclick="switchTab('open')" id="btn-open" class="btn btn-primary">Open</button>
-            <button onclick="switchTab('close')" id="btn-close" class="btn btn-primary">Close</button>
+            <button onclick="switchTab('open')" id="btn-open" class="btn ">Open</button>
+            <button onclick="switchTab('close')" id="btn-close" class="btn ">Close</button>
             <!-- <button onclick="toggleStyle('open-btn')" class="bg-white rounded-md px-8 py-2 shadow-2xl ml-2 mr-2 border"
                 id="open-btn">Open</button>
             <button onclick="toggleStyle('close-btn')" class="bg-white rounded-md px-8 py-2 shadow-2xl border"
@@ -94,6 +94,19 @@
 
 
         </div>
+
+        <div id="open-container" class="hidden grid grid-cols-4 m-6 gap-4">
+            <h2 class="text-4xl">open coming</h2>
+        </div>
+
+
+        <div id="close-container" class="hidden grid grid-cols-4 m-6 gap-4">
+            <h2 class="text-4xl">close coming</h2>
+
+
+        </div>
+
+
 
 
         <!-- show loading spinner -->

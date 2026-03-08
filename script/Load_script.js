@@ -1,6 +1,11 @@
 // console.log(" i'm");
 const IssueContainer = document.getElementById("issue-container");
 const loadSpinner = document.getElementById("load-spinner");
+const openContainer = document.getElementById("open-container");
+const closContainer = document.getElementById("close-container");
+// console.log(openContainer, closContainer);
+
+
 
 let allIssues = [];
 let currentTab = "all";
@@ -26,6 +31,19 @@ function switchTab(tab) {
         }
     }
 
+    const issues = [IssueContainer, openContainer, closContainer];
+
+    for (let page of issues) {
+        page.classlist.add("hidden");
+    }
+    if (tabs === "all") {
+        IssueContainer.classList.add("hidden");
+    } else if (tabs === "open") {
+        openContainer.classlist.remove("hidden");
+
+    } else {
+        closContainer.classList.remove("hidden");
+    }
 }
 
 
@@ -37,12 +55,15 @@ const loadIssue = () => {
     hideLoading()
 };
 
+
+
 const displayIssue = (issues) => {
+    console.log(issues.length);
     IssueContainer.innerHTML = ""
     for (let issue of issues) {
         const div = document.createElement("div");
         div.innerHTML = `
-                <div class="space-y-6 rounded-xl p-5 bg-base-100 shadow-md border-0 border-t-2" id="border">
+                <div class="space-y-6 rounded-xl p-5 bg-base-100 h-full shadow-md border-0 border-t-2" id="border">
                 <div class="flex justify-between items-center ">
                     <img src="./assets/Open-Status.png" alt="" id="icon">
                     <div class="badge badge-soft badge-error" id="status">${issue.priority}</div>
@@ -51,10 +72,10 @@ const displayIssue = (issues) => {
                 <p id="description" class="opacity-50 truncate">${issue.description}</p>
                 <div class="space-y-5">
                     <div class="badge badge-outline badge-error ">
-                        <span><img src="./assets/bug.png" alt=""></span> ${issue.labels}
+                        <span><img src="./assets/bug.png" alt=""></span> ${issue.labels[0]}
                     </div>
                     <div class="badge badge-outline badge-warning "><span><img src="./assets/help.png" alt=""></span>
-                        ${issue}</div>
+                        ${issue.labels[1]}</div>
 
                     <hr>
 

@@ -1,4 +1,3 @@
-//SIGN-IN FUNCTION 
 document.getElementById("Signin-btn").addEventListener("click", function () {
     // console.log("Signin successfully")
     //1- get the user input
@@ -12,7 +11,7 @@ document.getElementById("Signin-btn").addEventListener("click", function () {
     const password = inputPass.value;
     console.log(password);
     // 3-match pass & admin 
-    if (User == "admin" && password === "1234") {
+    if (User == "admin" && password === "admin1234") {
         alert("log in successfully");
         window.location.assign("home.html");
     } else {
@@ -20,5 +19,3 @@ document.getElementById("Signin-btn").addEventListener("click", function () {
         return;
     }
 });
-
-loadIssue();
