@@ -110,8 +110,8 @@ function displayIssue(issues) {
 
         const icon =
             status === "closed"
-                ? "../assets/Closed-Status.png"
-                : "../assets/Open-Status.png";
+                ? "./assets/Closed-Status.png"
+                : "./assets/Open-Status.png";
 
         const labels = issue.labels || [];
 
