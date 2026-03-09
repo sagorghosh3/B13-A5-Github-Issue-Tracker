@@ -185,8 +185,10 @@ async function loadSingleIssue(id) {
         console.error(err);
     }
 }
+/* ---------- Modal ---------- */
 
 function showIssueModal(issue) {
+
     if (!issue) return;
 
     document.getElementById("modal_title").innerText = issue.title || "";
@@ -194,14 +196,59 @@ function showIssueModal(issue) {
     document.getElementById("modal_author").innerText = issue.author || "";
     document.getElementById("modal_status").innerText = issue.status || "";
     document.getElementById("modal_priority").innerText = issue.priority || "";
+
     document.getElementById("modal_label").innerText =
         issue.labels?.join(", ") || "";
+
+    // NEW
+    document.getElementById("modal_assignee").innerText =
+        issue.author || "";
+
+    // NEW
+    document.getElementById("modal_date").innerText =
+        issue.createdAt
+            ? new Date(issue.createdAt).toLocaleDateString()
+            : "";
 
     document.getElementById("issue_modal").showModal();
 }
 
+/* ---------- SEARCH (DEBOUNCE) ---------- */
 
+let searchTimer;
 
+searchInput.addEventListener("keyup", e => {
+    const text = e.target.value.trim();
+
+    clearTimeout(searchTimer);
+
+    searchTimer = setTimeout(() => {
+        if (text === "") {
+            filterIssues();
+            return;
+        }
+
+        searchIssues(text);
+    }, 500);
+});
+
+async function searchIssues(text) {
+    try {
+        showLoading();
+
+        const res = await fetch(
+            `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
+        );
+
+        const data = await res.json();
+
+        displayIssue(data?.data || []);
+    } catch (err) {
+        console.error(err);
+    } finally {
+        hideLoading();
+    }
+}
 /* ---------- INIT ---------- */
 
 loadIssue();

@@ -135,27 +135,68 @@
 
         <!-- modal -->
         <dialog id="issue_modal" class="modal">
-            <div class="modal-box">
 
-                <h3 id="modal_title" class="font-bold text-lg"></h3>
+            <div class="modal-box max-w-2xl">
 
-                <p id="modal_desc" class="py-4"></p>
+                <!-- TITLE -->
+                <h3 id="modal_title" class="text-2xl font-bold mb-3"></h3>
 
-                <p>Status: <span id="modal_status"></span></p>
-                <p>Priority: <span id="modal_priority"></span></p>
-                <p>Author: <span id="modal_author"></span></p>
-                <p>Labels: <span id="modal_label"></span></p>
+                <!-- STATUS + AUTHOR + DATE -->
+                <div class="flex items-center gap-3 text-sm mb-4">
 
+                    <span id="modal_status" class="badge badge-success text-white px-3 py-1">
+                    </span>
+
+                    <span class="opacity-70">
+                        • Opened by <span id="modal_author"></span>
+                    </span>
+
+                    <span class="opacity-70">
+                        • <span id="modal_date"></span>
+                    </span>
+
+                </div>
+
+                <!-- LABELS -->
+                <div class="flex gap-2 mb-4">
+
+                    <span id="modal_label" class="badge badge-outline badge-error">
+                    </span>
+
+                </div>
+
+                <!-- DESCRIPTION -->
+                <p id="modal_desc" class="opacity-80 mb-6"></p>
+
+                <!-- ASSIGNEE + PRIORITY BOX -->
+                <div class="bg-base-200 rounded-lg p-4 flex justify-between">
+
+                    <div>
+                        <p class="text-sm opacity-60">Assignee:</p>
+                        <p id="modal_assignee" class="font-semibold"></p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm opacity-60">Priority:</p>
+                        <span id="modal_priority" class="badge badge-error text-white px-3 py-1">
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- BUTTON -->
                 <div class="modal-action">
+
                     <form method="dialog">
-                        <button class="btn">Close</button>
+                        <button class="btn btn-primary">Close</button>
                     </form>
+
                 </div>
 
             </div>
+
         </dialog>
 
-        <!-- search input -->
 
 
     </main>
