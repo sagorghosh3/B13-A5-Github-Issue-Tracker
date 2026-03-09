@@ -43,7 +43,7 @@
 
   - 3️⃣ What is the difference between map(), filter(), and forEach()?
 
-    # ans:map(), filter(), and forEach() all Array method.These method work on each element of array but purpose and return values are different.
+    ###  ans:map(), filter(), and forEach() all Array method.These method work on each element of array but purpose and return values are different.
     * map method basically used for change/transform each value and return a new Array.
 
     * filter method used for filtering data/element and return filtered value, it's depend on condition.if statement are true the return new value.
