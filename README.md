@@ -1,4 +1,4 @@
-# 🌟Assignment - 5 question 
+# 🌟Assignment - 5 
 # **
 #  
 # **
@@ -25,74 +25,38 @@
 
 ---
 
-## 📝 Main Requirements
+## ⚙️ question 
 
-## 🎨 Design Part
+  - 1️⃣ What is the difference between var, let, and const?
+    -ans: var, let, and const use to declare variable. 
+    const do not allow for this value change and reassign,it also Block scoped.
+    let is most demandable syntax for declare variable.
+    let allow his value reassign and redeclare.its be Hoisting but never assess before declaration. let is Block scoped.
+    var is older version syntax to declare variable minimal use.
+    var allow his value reassign and redeclare.its be Hoisting and can assess from anywhere. its function scoped.
 
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
-
-## Main Page: 
-
-### Navbar: 
-
-- Navbar with website logo/name on the left
-- Search input and button on the right
-
-### Tab Section like Figma: 
-
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
-
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
-
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
+  - 2️⃣ What is the spread operator (...)?
+    -ans: spread operator most common used array and object inner element to spread. it used for object clone or keep to old value and reassign update value also used for function argument. 
 
 
---- 
+  - 3️⃣ What is the difference between map(), filter(), and forEach()?
+    -ans:map(), filter(), and forEach() all Array method.These method work on each element of array but purpose and return values are different.
+    * map method basically used for change/transform each value and return a new Array.
+
+    * filter method used for filtering data/element and return filtered value, it's depend on condition.if statement are true the return new value.
+
+    * forEach method user for looping purpose on each element/object /array. Never return any new Array.
 
 
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
-
-- Load all issues and display as per Figma
+  - 4️⃣ What is an arrow function?
+    -ans: Arrow function is a short and modern syntax of javaScript.it is feature of ES6 (ECMAScript-2015 update).
 
 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
+  - 5️⃣ What are template literals?
+    -ans:template literals is sing of backtick.In backtick user can write string,using dollar sing and carly bracket have to dynamic value assign.It easy to express expression method. 
 
 
 ---
 
-## 🛠️ Technology Stack
-
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
-
----
-
-## 🔑 Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
-
----
-
-
-
-## 📤 What I submit
-
-- **GitHub Repository Link:**
-- **Live Site Link:**
-
----
 
 

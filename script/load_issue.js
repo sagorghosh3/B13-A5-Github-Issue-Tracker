@@ -1,3 +1,4 @@
+
 const IssueContainer = document.getElementById("issue-container");
 const loadSpinner = document.getElementById("load-spinner");
 const searchInput = document.getElementById("searchInput");
