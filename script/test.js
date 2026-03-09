@@ -186,8 +186,6 @@ async function loadSingleIssue(id) {
     }
 }
 
-/* ---------- MODAL ---------- */
-
 function showIssueModal(issue) {
     if (!issue) return;
 
@@ -202,42 +200,7 @@ function showIssueModal(issue) {
     document.getElementById("issue_modal").showModal();
 }
 
-/* ---------- SEARCH (DEBOUNCE) ---------- */
 
-let searchTimer;
-
-searchInput.addEventListener("keyup", e => {
-    const text = e.target.value.trim();
-
-    clearTimeout(searchTimer);
-
-    searchTimer = setTimeout(() => {
-        if (text === "") {
-            filterIssues();
-            return;
-        }
-
-        searchIssues(text);
-    }, 500);
-});
-
-async function searchIssues(text) {
-    try {
-        showLoading();
-
-        const res = await fetch(
-            `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
-        );
-
-        const data = await res.json();
-
-        displayIssue(data?.data || []);
-    } catch (err) {
-        console.error(err);
-    } finally {
-        hideLoading();
-    }
-}
 
 /* ---------- INIT ---------- */
 
