@@ -2,9 +2,8 @@ const IssueContainer = document.getElementById("issue-container");
 const loadSpinner = document.getElementById("load-spinner");
 const searchInput = document.getElementById("searchInput");
 
-const countAll = document.getElementById("count-all");
-const countOpen = document.getElementById("count-open");
-const countClosed = document.getElementById("count-closed");
+
+const countNum = document.getElementById("count-num");
 
 let allIssues = [];
 let currentTab = "all";
@@ -30,7 +29,7 @@ async function loadIssue() {
 
         allIssues = data?.data || [];
 
-        updateCounters();
+
         filterIssues();
     } catch (err) {
         console.error(err);
@@ -60,7 +59,6 @@ function switchTab(tab) {
     tabs.forEach(t => {
         const btn = document.getElementById("btn-" + t);
 
-        if (!btn) return;
 
         if (t === tab) {
             btn.classList.add("btn-primary");
@@ -75,16 +73,25 @@ function switchTab(tab) {
 /* ---------- FILTER ---------- */
 
 function filterIssues() {
+
+    let filtered = [];
+
     if (currentTab === "all") {
-        displayIssue(allIssues);
-        return;
+
+        filtered = allIssues;
+
+    } else {
+
+        filtered = allIssues.filter(issue =>
+            issue.status?.toLowerCase() === currentTab
+        );
+
     }
 
-    const filtered = allIssues.filter(
-        i => i.status?.toLowerCase() === currentTab
-    );
+    countNum.innerText = filtered.length;
 
     displayIssue(filtered);
+
 }
 
 /* ---------- DISPLAY CARDS ---------- */
@@ -102,8 +109,8 @@ function displayIssue(issues) {
 
         const icon =
             status === "closed"
-                ? "./assets/Close-Status.png"
-                : "./assets/Open-Status.png";
+                ? "../assets/Closed-Status.png"
+                : "../assets/Open-Status.png";
 
         const labels = issue.labels || [];
 
@@ -112,7 +119,7 @@ function displayIssue(issues) {
         div.className = "cursor-pointer";
 
         div.innerHTML = `
-    <div class="space-y-5 rounded-xl p-5 bg-base-100 shadow-md border-t-4 ${border}">
+    <div class="space-y-5 rounded-xl p-5 bg-base-100 shadow-md border-t-4 h-full ${border}">
 
       <div class="flex justify-between items-center">
 
@@ -151,7 +158,7 @@ function displayIssue(issues) {
         <hr>
 
         <p class="text-xs opacity-50">
-          #${issue.id} by ${issue.author || "unknown"}
+          #${issue.id} by ${issue.author}
         </p>
 
         <p class="text-xs opacity-50">
@@ -204,7 +211,7 @@ function showIssueModal(issue) {
     document.getElementById("modal_assignee").innerText =
         issue.author || "";
 
-    // NEW
+
     document.getElementById("modal_date").innerText =
         issue.createdAt
             ? new Date(issue.createdAt).toLocaleDateString()
@@ -249,6 +256,6 @@ async function searchIssues(text) {
         hideLoading();
     }
 }
-/* ---------- INIT ---------- */
+
 
 loadIssue();

@@ -43,10 +43,7 @@
                         <img src="./assets/github-logo.png" alt="" class="w-12">
                         <a class="btn btn-ghost text-2xl">GitHub Issues Tracker</a>
                     </div>
-                    <!-- search original  -->
-                    <!-- <div ">
-                        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-                    </div> -->
+
                     <div class="flex gap-2">
                         <input id="searchInput" type="text" placeholder="Search issues..."
                             class="input input-bordered w-64" />
@@ -59,36 +56,27 @@
     </header>
     <main class="w-[80%] mx-auto bg-base-100 shadow-sm">
 
-        <!-- <div class="mt-6 mb-3 bg-base-100 shadow-sm h-[70px] pt-3.5 pl-2">
-            <button onclick="switchTab('all')" id="btn-all" class="btn btn-primary">All</button>
-            <button onclick="switchTab('open')" id="btn-open" class="btn ">Open</button>
-            <button onclick="switchTab('close')" id="btn-close" class="btn ">Close</button> -->
-        <!-- <button onclick="toggleStyle('open-btn')" class="bg-white rounded-md px-8 py-2 shadow-2xl ml-2 mr-2 border"
-                id="open-btn">Open</button>
-            <button onclick="toggleStyle('close-btn')" class="bg-white rounded-md px-8 py-2 shadow-2xl border"
-                id="close-btn">Close</button> -->
-        <!-- </div> -->
+        <!-- btn -->
+        <div class="mt-6 mb-3 bg-base-100 shadow-sm h-[70px] pt-3.5 pl-2">
+            <button id="btn-all" onclick="switchTab('all')" class="btn btn-primary">
+                All
+            </button>
 
+            <button id="btn-open" onclick="switchTab('open')" class="btn">
+                Open
+            </button>
 
-        <!-- alternative btn -->
-        <button id="btn-all" onclick="switchTab('all')" class="btn btn-primary">
-            All (<span id="count-all"></span>)
-        </button>
-
-        <button id="btn-open" onclick="switchTab('open')" class="btn">
-            Open (<span id="count-open"></span>)
-        </button>
-
-        <button id="btn-closed" onclick="switchTab('closed')" class="btn">
-            Closed (<span id="count-closed"></span>)
-        </button>
+            <button id="btn-closed" onclick="switchTab('closed')" class="btn">
+                Closed
+            </button>
+        </div>
 
         <div>
             <div class="flex gap-2 justify-between bg-base-100 shadow-sm h-[70px] p-3 ">
                 <div class="flex gap-2">
                     <img src="./assets/Aperture.png" alt="">
                     <div>
-                        <p id="count" class="font-bold">50 Issues</p>
+                        <p id="count" class="font-bold"><span id="count-num">50</span> Issues</p>
                         <p class="opacity-50 w-3xl">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -106,13 +94,7 @@
             </div>
         </div>
 
-        <!-- <div id="issue-container" class=" grid grid-cols-4 m-6 gap-4">
-            
-
-
-        </div> -->
-        <!-- alternative -->
-        <div id="issue-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div id="issue-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-6 gap-6">
         </div>
         <div id="open-container" class="hidden grid grid-cols-4 m-6 gap-4">
             <h2 class="text-4xl">open coming</h2>
@@ -200,8 +182,7 @@
 
 
     </main>
-    <script src="./script/test.js"></script>
-    <!-- <script src="./script/Load_script.js"></script> -->
+    <script src="./script/load_issue.js"></script>
 </body>
 
 </html>

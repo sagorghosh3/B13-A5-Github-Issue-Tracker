@@ -11,7 +11,7 @@ document.getElementById("Signin-btn").addEventListener("click", function () {
     const password = inputPass.value;
     console.log(password);
     // 3-match pass & admin 
-    if (User == "admin" && password === "admin1234") {
+    if (User == "admin" && password === "admin123") {
         alert("log in successfully");
         window.location.assign("home.html");
     } else {
