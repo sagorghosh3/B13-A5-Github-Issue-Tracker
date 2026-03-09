@@ -28,7 +28,8 @@
 ## ⚙️ question 
 
   - 1️⃣ What is the difference between var, let, and const?
-    -ans: var, let, and const use to declare variable. 
+
+    * ans: var, let, and const use to declare variable. 
     const do not allow for this value change and reassign,it also Block scoped.
     let is most demandable syntax for declare variable.
     let allow his value reassign and redeclare.its be Hoisting but never assess before declaration. let is Block scoped.
@@ -36,11 +37,13 @@
     var allow his value reassign and redeclare.its be Hoisting and can assess from anywhere. its function scoped.
 
   - 2️⃣ What is the spread operator (...)?
-    -ans: spread operator most common used array and object inner element to spread. it used for object clone or keep to old value and reassign update value also used for function argument. 
+
+    * ans: spread operator most common used array and object inner element to spread. it used for object clone or keep to old value and reassign update value also used for function argument. 
 
 
   - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    -ans:map(), filter(), and forEach() all Array method.These method work on each element of array but purpose and return values are different.
+
+    # ans:map(), filter(), and forEach() all Array method.These method work on each element of array but purpose and return values are different.
     * map method basically used for change/transform each value and return a new Array.
 
     * filter method used for filtering data/element and return filtered value, it's depend on condition.if statement are true the return new value.
@@ -49,11 +52,13 @@
 
 
   - 4️⃣ What is an arrow function?
-    -ans: Arrow function is a short and modern syntax of javaScript.it is feature of ES6 (ECMAScript-2015 update).
+
+    * ans: Arrow function is a short and modern syntax of javaScript.it is feature of ES6 (ECMAScript-2015 update).
 
 
   - 5️⃣ What are template literals?
-    -ans:template literals is sing of backtick.In backtick user can write string,using dollar sing and carly bracket have to dynamic value assign.It easy to express expression method. 
+
+    * ans:template literals is sing of backtick.In backtick user can write string,using dollar sing and carly bracket have to dynamic value assign.It easy to express expression method. 
 
 
 ---
